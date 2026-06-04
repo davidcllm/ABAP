@@ -1,6 +1,10 @@
-REPORT ztest_hello.
+REPORT ztest_variables.
 
-WRITE 'Hello, ABAP Dojo!'.
-WRITE / 'Welcome to the playground.'.
+DATA lv_nombre TYPE string.
+DATA lv_edad TYPE i.
 
-* El "/" es un \n
+lv_nombre = 'David'.
+lv_edad = 25.
+
+WRITE: / 'Nombre: ', lv_nombre.
+WRITE: / 'Edad: ', lv_edad.
