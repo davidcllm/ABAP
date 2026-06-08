@@ -1,15 +1,9 @@
-DATA lv_num1 TYPE i VALUE 10.
-DATA lv_num2 TYPE i VALUE 15.
-DATA lv_res TYPE i.
+DATA lv_nombre TYPE string VALUE 'David'.
+DATA lv_apellido TYPE string VALUE 'Cruz'.
+DATA lv_nombreCompleto TYPE string.
 
-lv_res = lv_num1 + lv_num2.
-WRITE lv_res.
+CONCATENATE lv_nombre lv_apellido
+  INTO lv_nombreCompleto
+  SEPARATED BY space.
 
-lv_res = lv_num1 - lv_num2.
-WRITE / lv_res.
-
-lv_res = lv_num1 * lv_num2.
-WRITE / lv_res.
-
-lv_res = lv_num1 / lv_num2.
-WRITE / lv_res.
+WRITE lv_nombreCompleto.
