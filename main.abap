@@ -1,9 +1,17 @@
-REPORT ztest_persona.
+REPORT ztest_constantes.
 
-DATA lv_nombre TYPE string VALUE 'David'.
-DATA lv_edad TYPE i VALUE 21.
-DATA lv_ciudad TYPE string VALUE 'Ciudad1'.
+CONSTANTS gc_lunes TYPE string VALUE 'Lunes'.
+CONSTANTS gc_martes TYPE string VALUE 'Martes'.
+CONSTANTS gc_miercoles TYPE string VALUE 'Miercoles'.
+CONSTANTS gc_jueves TYPE string VALUE 'Jueves'.
+CONSTANTS gc_viernes TYPE string VALUE 'Viernes'.
+CONSTANTS gc_sabado TYPE string VALUE 'Sabado'.
+CONSTANTS gc_domingo TYPE string VALUE 'Domingo'.
 
-WRITE: / 'Nombre: ', lv_nombre.
-WRITE: / 'Edad: ', lv_edad.
-WRITE: / 'Ciudad: ', lv_ciudad.
+WRITE: / gc_lunes.
+WRITE: / gc_martes.
+WRITE: / gc_miercoles.
+WRITE: / gc_jueves.
+WRITE: / gc_viernes.
+WRITE: / gc_sabado.
+WRITE: / gc_domingo.
