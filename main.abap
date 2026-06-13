@@ -1,6 +1,7 @@
 REPORT ztest_operadores.
 
-DATA lv_resultado TYPE i.
+DATA lv_edad TYPE i VALUE 21.
 
-lv_resultado = 2 + 3 * 4.
-WRITE lv_resultado.
+IF lv_edad >= 18.
+  WRITE 'Eres mayor de edad'.
+ENDIF.
