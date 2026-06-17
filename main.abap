@@ -1,7 +1,9 @@
-REPORT ztest_operadores.
+REPORT ztest_if_else.
 
-DATA lv_usuario TYPE string VALUE 'David'.
+DATA lv_usuario TYPE i VALUE 17.
 
-IF lv_usuario = 'David'.
-  WRITE 'Usuario encontrado'.
+IF lv_usuario >= 18.
+  WRITE 'Eres mayor de edad'.
+ELSE.
+  WRITE 'Eres menor de edad'.
 ENDIF.
