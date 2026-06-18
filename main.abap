@@ -1,9 +1,11 @@
 REPORT ztest_if_else.
 
-DATA lv_usuario TYPE i VALUE 17.
+DATA lv_calificacion TYPE i VALUE 60.
 
-IF lv_usuario >= 18.
-  WRITE 'Eres mayor de edad'.
+IF lv_calificacion >= 90.
+  WRITE 'Excelente'.
+ELSEIF lv_calificacion >= 70.
+  WRITE 'Aprobado'.
 ELSE.
-  WRITE 'Eres menor de edad'.
+  WRITE 'Reprobado'.
 ENDIF.
