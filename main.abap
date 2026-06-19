@@ -1,11 +1,10 @@
-REPORT ztest_if_else.
+REPORT ztest_and.
 
-DATA lv_calificacion TYPE i VALUE 60.
+DATA lv_edad TYPE i VALUE 25.
+DATA lv_ine TYPE abap_bool VALUE abap_true.
 
-IF lv_calificacion >= 90.
-  WRITE 'Excelente'.
-ELSEIF lv_calificacion >= 70.
-  WRITE 'Aprobado'.
+IF lv_edad >= 18 AND lv_ine = abap_true.
+  WRITE 'Puede votar'.
 ELSE.
-  WRITE 'Reprobado'.
+  WRITE 'No puede votar'.
 ENDIF.
