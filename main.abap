@@ -1,4 +1,4 @@
-REPORT ztest_and.
+REPORT ztest_or.
 
 DATA lv_rol TYPE string VALUE 'ADMIN'.
 
