@@ -1,9 +1,7 @@
-REPORT ztest_or.
+REPORT ztest_not.
 
-DATA lv_rol TYPE string VALUE 'ADMIN'.
+DATA lv_activo TYPE abap_bool VALUE abap_false.
 
-IF lv_rol = 'ADMIN' OR lv_rol = 'SUPERADMIN'.
-  WRITE 'Acceso permitido'.
-ELSE. 
-  WRITE 'Acceso denegado'.
+IF NOT lv_activo = abap_true.
+  WRITE 'Usuario inactivo'.
 ENDIF.
