@@ -1,7 +1,16 @@
-REPORT ztest_not.
+REPORT ztest_login.
 
-DATA lv_activo TYPE abap_bool VALUE abap_false.
+DATA lv_usuario TYPE string VALUE 'admin'.
+DATA lv_pwd TYPE string VALUE '1234'.
 
-IF NOT lv_activo = abap_true.
-  WRITE 'Usuario inactivo'.
+IF lv_usuario = 'admin'
+  AND lv_pwd = '1234'.
+
+  WRITE 'Login correcto '.
+
+ELSE.
+
+  WRITE 'Usuario o pwd incorrectos'.
+
 ENDIF.
+
