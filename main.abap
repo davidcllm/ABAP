@@ -1,16 +1,10 @@
-REPORT ztest_login.
+REPORT ztest_descuento.
 
-DATA lv_usuario TYPE string VALUE 'admin'.
-DATA lv_pwd TYPE string VALUE '1234'.
+DATA lv_compra TYPE p DECIMALS 2 VALUE '900.00'.
 
-IF lv_usuario = 'admin'
-  AND lv_pwd = '1234'.
-
-  WRITE 'Login correcto '.
-
+IF lv_compra >= '1000.00'.
+  WRITE 'Descuento aplicado'.
 ELSE.
-
-  WRITE 'Usuario o pwd incorrectos'.
-
-ENDIF.
+  WRITE 'Descuento no aplicado'.
+ENDIF. 
 
