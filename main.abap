@@ -1,14 +1,21 @@
-REPORT ztest_descuento.
+REPORT ztest_case.
 
-DATA lv_compra TYPE p DECIMALS 2 VALUE '5000.00'.
+DATA lv_dia TYPE i VALUE 3.
 
-IF lv_compra >= '5000.00'.
-  WRITE 'Descuento 20%'.
-ELSEIF lv_compra >= '2000.00'.
-  WRITE 'Descuento 10%'.
-ELSEIF lv_compra >= '1000.00'.
-  WRITE 'Descuento 5%'.
-ELSE.
-  WRITE 'No descuento'.
-ENDIF. 
+CASE lv_dia.
+  WHEN 1.
+    WRITE 'Lunes'.
+  WHEN 2.
+    WRITE 'Martes'.
+  WHEN 3.
+    WRITE 'Miercoles'.
+  WHEN 4.
+    WRITE 'Jueves'.
+  WHEN 5.
+    WRITE 'Viernes'.
+  WHEN 6.
+    WRITE 'Sabado'.
+  WHEN 7.
+    WRITE 'Domingo'.
+ENDCASE. 
 
