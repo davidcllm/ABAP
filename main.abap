@@ -1,21 +1,14 @@
 REPORT ztest_case.
 
-DATA lv_dia TYPE i VALUE 3.
+DATA lv_rol TYPE string VALUE 'ADMIN'.
 
-CASE lv_dia.
-  WHEN 1.
-    WRITE 'Lunes'.
-  WHEN 2.
-    WRITE 'Martes'.
-  WHEN 3.
-    WRITE 'Miercoles'.
-  WHEN 4.
-    WRITE 'Jueves'.
-  WHEN 5.
-    WRITE 'Viernes'.
-  WHEN 6.
-    WRITE 'Sabado'.
-  WHEN 7.
-    WRITE 'Domingo'.
+CASE lv_rol.
+  WHEN 'ADMIN'.
+  WRITE 'Acceso total'.
+  WHEN 'USER'.
+    WRITE 'Acceso limitado'.
+  WHEN 'GUEST'.
+    WRITE 'Solo lectura'.
+  WHEN OTHERS.
+    WRITE 'Rol desconocido'.
 ENDCASE. 
-
