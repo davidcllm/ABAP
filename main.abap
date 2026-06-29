@@ -1,14 +1,12 @@
 REPORT ztest_case.
 
-DATA lv_rol TYPE string VALUE 'ADMIN'.
+DATA lv_calif TYPE i VALUE 10.
 
-CASE lv_rol.
-  WHEN 'ADMIN'.
-  WRITE 'Acceso total'.
-  WHEN 'USER'.
-    WRITE 'Acceso limitado'.
-  WHEN 'GUEST'.
-    WRITE 'Solo lectura'.
+CASE lv_calif.
+  WHEN 9 OR 10.
+  WRITE 'Excelente'.
+  WHEN 7 OR 8.
+    WRITE 'Aprobado'.
   WHEN OTHERS.
-    WRITE 'Rol desconocido'.
-ENDCASE. 
+    WRITE 'Reprobado'.
+ENDCASE.
