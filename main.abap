@@ -1,12 +1,21 @@
-REPORT ztest_case.
+REPORT ztest_estado_orden.
 
-DATA lv_calif TYPE i VALUE 10.
+DATA lv_estado TYPE c LENGTH 1 VALUE 'C'.
 
-CASE lv_calif.
-  WHEN 9 OR 10.
-  WRITE 'Excelente'.
-  WHEN 7 OR 8.
-    WRITE 'Aprobado'.
+CASE lv_estado.
+  WHEN 'N'.
+    WRITE 'Nueva'.
+
+  WHEN 'P'.
+    WRITE 'Procesando'.
+
+  WHEN 'C'.
+    WRITE 'Completada'.
+
+  WHEN 'X'.
+    WRITE 'Cancelada'.
+
   WHEN OTHERS.
-    WRITE 'Reprobado'.
+    WRITE 'Operacion no valida'.
+
 ENDCASE.
