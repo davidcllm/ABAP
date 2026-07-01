@@ -1,21 +1,30 @@
-REPORT ztest_estado_orden.
+REPORT ztest_dias.
 
-DATA lv_estado TYPE c LENGTH 1 VALUE 'C'.
+DATA lv_estado TYPE i VALUE 7.
 
 CASE lv_estado.
-  WHEN 'N'.
-    WRITE 'Nueva'.
+  WHEN 1.
+    WRITE 'Lunes'.
 
-  WHEN 'P'.
-    WRITE 'Procesando'.
+  WHEN 2.
+    WRITE 'Martes'.
 
-  WHEN 'C'.
-    WRITE 'Completada'.
+  WHEN 3.
+    WRITE 'Miercoles'.
 
-  WHEN 'X'.
-    WRITE 'Cancelada'.
+  WHEN 4.
+    WRITE 'Jueves'.
+
+  WHEN 5.
+    WRITE 'Viernes'.
+
+  WHEN 6.
+    WRITE 'Sabado'.
+
+  WHEN 7.
+    WRITE 'Domingo'.
 
   WHEN OTHERS.
-    WRITE 'Operacion no valida'.
+    WRITE 'Dia invalido'.
 
 ENDCASE.
