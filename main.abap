@@ -1,30 +1,22 @@
-REPORT ztest_dias.
+REPORT ztest_estatus.
 
-DATA lv_estado TYPE i VALUE 7.
+DATA lv_estatus TYPE c.
+lv_estatus = 'c'.
 
-CASE lv_estado.
-  WHEN 1.
-    WRITE 'Lunes'.
+CASE lv_estatus.
+  WHEN 'n'.
+    WRITE 'Nueva'.
 
-  WHEN 2.
-    WRITE 'Martes'.
+  WHEN 'p'.
+    WRITE 'En proceso'.
 
-  WHEN 3.
-    WRITE 'Miercoles'.
+  WHEN 'c'.
+    WRITE 'Completada'.
 
-  WHEN 4.
-    WRITE 'Jueves'.
-
-  WHEN 5.
-    WRITE 'Viernes'.
-
-  WHEN 6.
-    WRITE 'Sabado'.
-
-  WHEN 7.
-    WRITE 'Domingo'.
+  WHEN 'x'.
+    WRITE 'Cancelada'.
 
   WHEN OTHERS.
-    WRITE 'Dia invalido'.
+    WRITE 'Estatus invalido'.
 
 ENDCASE.
