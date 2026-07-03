@@ -1,19 +1,19 @@
 REPORT ztest_estatus.
 
 DATA lv_estatus TYPE c.
-lv_estatus = 'c'.
+lv_estatus = 'C'.
 
 CASE lv_estatus.
-  WHEN 'n'.
+  WHEN 'N'.
     WRITE 'Nueva'.
 
-  WHEN 'p'.
+  WHEN 'P'.
     WRITE 'En proceso'.
 
-  WHEN 'c'.
+  WHEN 'C'.
     WRITE 'Completada'.
 
-  WHEN 'x'.
+  WHEN 'X'.
     WRITE 'Cancelada'.
 
   WHEN OTHERS.
