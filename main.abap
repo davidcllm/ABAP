@@ -1,5 +1,5 @@
 REPORT ztest_do.
 
 DO 5 TIMES. 
-  WRITE: / 'Hola abap'.
+  WRITE: / 'Iteración: ', sy-index.
 ENDDO.
