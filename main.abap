@@ -1,8 +1,9 @@
-REPORT ztest_do.
+REPORT ztest_while.
 
-DATA lv_total TYPE i VALUE 0.
+DATA lv_contador TYPE i VALUE 1.
 
-DO 10 TIMES. 
-  lv_total = lv_total + 1.
-  WRITE: / 'Iteración: ', lv_total.
-ENDDO.
+WHILE lv_contador <= 5.
+  WRITE: / lv_contador.
+  lv_contador = lv_contador + 1.
+ENDWHILE.
+
