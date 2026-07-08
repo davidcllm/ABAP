@@ -1,9 +1,11 @@
-REPORT ztest_while.
+REPORT ztest_exit.
 
-DATA lv_contador TYPE i VALUE 1.
+DO 10 TIMES.
+  WRITE: / sy-index.
 
-WHILE lv_contador <= 5.
-  WRITE: / lv_contador.
-  lv_contador = lv_contador + 1.
-ENDWHILE.
+  IF sy-index = 6.
+    EXIT.
+  ENDIF.
+
+ENDDO.
 
