@@ -1,11 +1,11 @@
-REPORT ztest_exit.
+REPORT ztest_continue.
 
-DO 10 TIMES.
-  WRITE: / sy-index.
-
-  IF sy-index = 6.
-    EXIT.
+DO 5 TIMES.
+  IF sy-index = 3.
+    CONTINUE.
   ENDIF.
+
+  WRITE: / sy-index.
 
 ENDDO.
 
