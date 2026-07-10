@@ -1,6 +1,8 @@
-REPORT ztest_uno_al_100.
+REPORT ztest_uno_al_100_pares.
 
 DO 100 TIMES.
-  WRITE: / sy-index.
+  IF sy-index MOD 2 = 0.
+    WRITE: / sy-index.
+  ENDIF.
 
 ENDDO.
