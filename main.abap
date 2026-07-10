@@ -1,11 +1,6 @@
-REPORT ztest_continue.
+REPORT ztest_uno_al_100.
 
-DO 5 TIMES.
-  IF sy-index = 3.
-    CONTINUE.
-  ENDIF.
-
+DO 100 TIMES.
   WRITE: / sy-index.
 
 ENDDO.
-
