@@ -1,8 +1,7 @@
-REPORT ztest_tabla_del_7.
+REPORT ztest_tabla.
 
-DATA lv_resultado TYPE i VALUE 0.
+DATA lt_nombres TYPE TABLE OF string.
 
-DO 10 TIMES.
-  lv_resultado = sy-index * 7.
-  WRITE: / '7 x ', sy-index, ' = ', lv_resultado.
-ENDDO.
+APPEND 'David' TO lt_nombres.
+APPEND 'Ana' TO lt_nombres.
+APPEND 'Luis' TO lt_nombres.
