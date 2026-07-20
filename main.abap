@@ -1,14 +1,23 @@
-REPORT ztest_tabla.
+REPORT ztest_taba.
 
-DATA lt_nombres TYPE TABLE OF string.
+TYPES: BEGIN OF ty_person,
+         name TYPE string,
+       END OF ty_person.
 
-APPEND 'David' TO lt_nombres.
-APPEND 'Ana' TO lt_nombres.
-APPEND 'Luis' TO lt_nombres.
+DATA lt_people TYPE STANDARD TABLE OF ty_person WITH DEFAULT KEY.
+DATA ls_person TYPE ty_person.
 
-LOOP AT lt_nombres INTO DATA(lv_nombre).
+ls_person-name = 'Alice'.
+APPEND ls_person TO lt_people.
 
-  WRITE: / lv_nombre.
+ls_person-name = 'Bob'.
+APPEND ls_person TO lt_people.
 
+ls_person-name = 'Charlie'.
+APPEND ls_person TO lt_people.
+
+LOOP AT lt_people INTO ls_person.
+  WRITE: / ls_person-name.
 ENDLOOP.
 
+WRITE: / 'Total: ', LINES( lt_people ), ' people'.
