@@ -1,29 +1,33 @@
 REPORT ztest_itab.
 
-TYPES: BEGIN OF ty_person,
-         name TYPE string,
-       END OF ty_person.
+TYPES: BEGIN OF ty_number,
+  number TYPE i,
+END OF ty_number.
 
-DATA lt_people TYPE STANDARD TABLE OF ty_person WITH DEFAULT KEY.
-DATA ls_person TYPE ty_person.
+DATA lt_numbers TYPE STANDARD TABLE OF ty_number WITH DEFAULT KEY.
+DATA ls_number TYPE ty_number.
+DATA lv_count TYPE i.
 
-ls_person-name = 'David'.
-APPEND ls_person TO lt_people.
+ls_number-number = 10.
+APPEND ls_number TO lt_numbers.
 
-ls_person-name = 'Ana'.
-APPEND ls_person TO lt_people.
+ls_number-number = 20.
+APPEND ls_number TO lt_numbers.
 
-ls_person-name = 'Luis'.
-APPEND ls_person TO lt_people.
+ls_number-number = 30.
+APPEND ls_number TO lt_numbers.
 
-ls_person-name = 'Carlos'.
-APPEND ls_person TO lt_people.
+ls_number-number = 40.
+APPEND ls_number TO lt_numbers.
 
-ls_person-name = 'Maria'.
-APPEND ls_person TO lt_people.
+ls_number-number = 50.
+APPEND ls_number TO lt_numbers.
 
-LOOP AT lt_people INTO ls_person.
-  WRITE: / ls_person-name.
+
+LOOP AT lt_numbers INTO ls_number.
+  WRITE: / ls_number-number.
 ENDLOOP.
 
-WRITE: / 'Total: ', LINES( lt_people ), ' people'.
+DESCRIBE TABLE lt_numbers LINES lv_count.
+
+WRITE: / 'Total: ', lv_count, ' numbers'.
