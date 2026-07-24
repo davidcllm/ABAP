@@ -7,6 +7,7 @@ END OF ty_number.
 DATA lt_numbers TYPE STANDARD TABLE OF ty_number WITH DEFAULT KEY.
 DATA ls_number TYPE ty_number.
 DATA lv_count TYPE i.
+DATA lv_sum TYPE i.
 
 ls_number-number = 10.
 APPEND ls_number TO lt_numbers.
@@ -26,8 +27,10 @@ APPEND ls_number TO lt_numbers.
 
 LOOP AT lt_numbers INTO ls_number.
   WRITE: / ls_number-number.
+  lv_sum = lv_sum + ls_number-number.
 ENDLOOP.
 
 DESCRIBE TABLE lt_numbers LINES lv_count.
 
 WRITE: / 'Total: ', lv_count, ' numbers'.
+WRITE: / 'Suma: ', lv_sum.
