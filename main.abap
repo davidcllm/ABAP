@@ -1,36 +1,42 @@
 REPORT ztest_itab.
 
-TYPES: BEGIN OF ty_number,
-  number TYPE i,
-END OF ty_number.
+TYPES: BEGIN OF ty_person,
+  name TYPE string,
+  age TYPE i,
+END OF ty_person.
 
-DATA lt_numbers TYPE STANDARD TABLE OF ty_number WITH DEFAULT KEY.
-DATA ls_number TYPE ty_number.
+DATA lt_people TYPE STANDARD TABLE OF ty_person WITH DEFAULT KEY.
+DATA ls_person TYPE ty_person.
 DATA lv_count TYPE i.
 DATA lv_sum TYPE i.
 
-ls_number-number = 10.
-APPEND ls_number TO lt_numbers.
+ls_person-age = 10.
+ls_person-name = 'David'.
+APPEND ls_person TO lt_people.
 
-ls_number-number = 20.
-APPEND ls_number TO lt_numbers.
+ls_person-age = 20.
+ls_person-name = 'Maria'.
+APPEND ls_person TO lt_people.
 
-ls_number-number = 30.
-APPEND ls_number TO lt_numbers.
+ls_person-age = 30.
+ls_person-name = 'Santiago'.
+APPEND ls_person TO lt_people.
 
-ls_number-number = 40.
-APPEND ls_number TO lt_numbers.
+ls_person-age = 40.
+ls_person-name = 'Beto'.
+APPEND ls_person TO lt_people.
 
-ls_number-number = 50.
-APPEND ls_number TO lt_numbers.
+ls_person-age = 50.
+ls_person-name = 'Andres'.
+APPEND ls_person TO lt_people.
 
 
-LOOP AT lt_numbers INTO ls_number.
-  WRITE: / ls_number-number.
-  lv_sum = lv_sum + ls_number-number.
+LOOP AT lt_people INTO ls_person.
+  WRITE: / ls_person-name, ' tiene: ', ls_person-age, ' años'.
+  lv_sum = lv_sum + ls_person-age.
 ENDLOOP.
 
-DESCRIBE TABLE lt_numbers LINES lv_count.
+DESCRIBE TABLE lt_people LINES lv_count.
 
-WRITE: / 'Total: ', lv_count, ' numbers'.
-WRITE: / 'Suma: ', lv_sum.
+WRITE: / 'Total: ', lv_count, ' personas'.
+WRITE: / 'Suma edades: ', lv_sum.
