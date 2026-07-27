@@ -20,21 +20,25 @@ ls_person-age = 20.
 ls_person-name = 'Maria'.
 ls_person-lastname = 'Garcia'.
 APPEND ls_person TO lt_people.
+CLEAR ls_person.
 
 ls_person-age = 30.
 ls_person-name = 'Santiago'.
 ls_person-lastname = 'Hernandez'.
 APPEND ls_person TO lt_people.
+CLEAR ls_person.
 
 ls_person-age = 40.
 ls_person-name = 'Beto'.
 ls_person-lastname = 'Peres'.
 APPEND ls_person TO lt_people.
+CLEAR ls_person.
 
 ls_person-age = 50.
 ls_person-name = 'Andres'.
 ls_person-lastname = 'Lopez'.
 APPEND ls_person TO lt_people.
+CLEAR ls_person.
 
 
 LOOP AT lt_people INTO ls_person.
