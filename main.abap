@@ -21,3 +21,9 @@ SELECT carrid, carrname
 LOOP AT lt_scarr INTO DATA(ls_scarr).
   WRITE: / ls_scarr-carrid, ls_scarr-carrname.
 ENDLOOP.
+
+"Leer un solo registro
+SELECT SINGLE * 
+  FROM scarr
+  WHERE carrid = 'LH'
+  INTO @DATA(ls_scarr).
