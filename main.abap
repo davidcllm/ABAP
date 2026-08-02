@@ -27,3 +27,9 @@ SELECT SINGLE *
   FROM scarr
   WHERE carrid = 'LH'
   INTO @DATA(ls_scarr).
+
+"Filtrar datos
+SELECT * 
+  FROM scarr
+  WHERE currcode = 'USD'
+  INTO TABLE @DATA(ls_scarr).
