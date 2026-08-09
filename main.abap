@@ -8,3 +8,11 @@ END OF ty_person.
 
 DATA lt_people TYPE STANDARD TABLE OF ty_person.
 DATA ls_person TYPE ty_person.
+
+ls_person-name = 'David'.
+ls_person-age = 21.
+APPEND ls_person TO lt_people.
+
+ls_person-name = 'Maria'.
+ls_person-age = 24.
+APPEND ls_person TO lt_people.
