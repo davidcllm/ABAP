@@ -16,3 +16,7 @@ APPEND ls_person TO lt_people.
 ls_person-name = 'Maria'.
 ls_person-age = 24.
 APPEND ls_person TO lt_people.
+
+READ TABLE lt_people 
+  INTO ls_person
+  INDEX 2.
