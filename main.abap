@@ -19,9 +19,11 @@ APPEND ls_person TO lt_people.
 
 READ TABLE lt_people 
   INTO ls_person
-  INDEX 2.
+  INDEX 3.
 
 IF sy-subrc = 0.
   WRITE: / ls_person-name.
   WRITE: / ls_person-age.
+ELSE.
+  WRITE: / 'No encontrado'.
 ENDIF.
