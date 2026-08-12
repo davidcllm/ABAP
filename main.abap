@@ -19,7 +19,7 @@ APPEND ls_person TO lt_people.
 
 READ TABLE lt_people 
   INTO ls_person
-  INDEX 3.
+  WITH KEY name = 'Maria'.
 
 IF sy-subrc = 0.
   WRITE: / ls_person-name.
