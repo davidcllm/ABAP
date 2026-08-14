@@ -17,9 +17,13 @@ ls_person-name = 'Maria'.
 ls_person-age = 24.
 APPEND ls_person TO lt_people.
 
+ls_person-name = 'Santiago'.
+ls_person-age = 30.
+APPEND ls_person TO lt_people.
+
 READ TABLE lt_people 
   INTO ls_person
-  WITH KEY name = 'Maria'.
+  WITH KEY name = 'Santiago'.
 
 IF sy-subrc = 0.
   WRITE: / ls_person-name.
