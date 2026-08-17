@@ -16,18 +16,21 @@ ls_person-lastname = 'Guevara'.
 ls_person-age = 21.
 ls_person-address = 'Calle 123'.
 APPEND ls_person TO lt_people.
+CLEAR ls_person.
 
 ls_person-name = 'Maria'.
 ls_person-lastname = 'Guevara'.
 ls_person-age = 24.
 ls_person-address = 'Calle 314'.
 APPEND ls_person TO lt_people.
+CLEAR ls_person.
 
 ls_person-name = 'Santiago'.
 ls_person-lastname = 'Guevara'.
 ls_person-age = 30.
 ls_person-address = 'Calle 501'.
 APPEND ls_person TO lt_people.
+CLEAR ls_person.
 
 READ TABLE lt_people 
   INTO ls_person
