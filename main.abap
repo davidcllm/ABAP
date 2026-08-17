@@ -1,5 +1,4 @@
 REPORT ztest.
-WRITE 'Hello, ABAP Dojo!'.REPORT ztest_read.
 
 "Definir tabla
 TYPES: BEGIN OF ty_person,
@@ -32,10 +31,9 @@ APPEND ls_person TO lt_people.
 
 READ TABLE lt_people 
   INTO ls_person
-  WITH KEY name = 'Fernando'.
-READ TABLE lt_people 
-  INTO ls_person
-  WITH KEY lastname = 'Guevara'.
+  WITH KEY name = 'David'
+           lastname = 'Guevara'.
+
 
 IF sy-subrc = 0.
   WRITE: / ls_person-name.
