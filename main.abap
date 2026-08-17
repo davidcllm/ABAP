@@ -1,10 +1,12 @@
-REPORT ztest_read.
+REPORT ztest.
+WRITE 'Hello, ABAP Dojo!'.REPORT ztest_read.
 
 "Definir tabla
 TYPES: BEGIN OF ty_person,
   name TYPE string,
   lastname TYPE string,
   age TYPE i,
+  address TYPE string,
 END OF ty_person.
 
 DATA lt_people TYPE STANDARD TABLE OF ty_person.
@@ -13,16 +15,19 @@ DATA ls_person TYPE ty_person.
 ls_person-name = 'David'.
 ls_person-lastname = 'Guevara'.
 ls_person-age = 21.
+ls_person-address = 'Calle 123'.
 APPEND ls_person TO lt_people.
 
 ls_person-name = 'Maria'.
 ls_person-lastname = 'Guevara'.
 ls_person-age = 24.
+ls_person-address = 'Calle 314'.
 APPEND ls_person TO lt_people.
 
 ls_person-name = 'Santiago'.
 ls_person-lastname = 'Guevara'.
 ls_person-age = 30.
+ls_person-address = 'Calle 501'.
 APPEND ls_person TO lt_people.
 
 READ TABLE lt_people 
