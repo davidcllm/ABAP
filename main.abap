@@ -37,6 +37,9 @@ READ TABLE lt_people
   WITH KEY name = 'David'
            lastname = 'Guevara'.
 
+ls_person-age = 22.
+MODIFY lt_people FROM ls_person INDEX sy-tabix.
+
 
 IF sy-subrc = 0.
   WRITE: / ls_person-name.
