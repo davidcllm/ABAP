@@ -38,8 +38,7 @@ READ TABLE lt_people
            lastname = 'Guevara'.
 
 IF sy-subrc = 0.
-  ls_person-age = 22.
-  MODIFY lt_people FROM ls_person INDEX sy-tabix.
+  DELETE lt_people INDEX 2.
 ENDIF.
 
 IF sy-subrc = 0.
