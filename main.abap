@@ -40,9 +40,5 @@ READ TABLE lt_people
            lastname = 'Guevara'.
 
 IF sy-subrc = 0.
-  WRITE: / ls_person-name.
-  WRITE: / ls_person-lastname.
-  WRITE: / ls_person-age.
-ELSE.
-  WRITE: / 'Persona no encontrada'.
+  DELETE lt_people INDEX sy-tabix.
 ENDIF.
