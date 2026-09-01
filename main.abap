@@ -32,13 +32,17 @@ ls_person-address = 'Calle 501'.
 APPEND ls_person TO lt_people.
 CLEAR ls_person.
 
-DELETE lt_people INDEX 2.
+DELETE lt_people WHERE age < 29.
 
 READ TABLE lt_people 
   INTO ls_person
-  WITH KEY name = 'Maria'
+  WITH KEY name = 'David'
            lastname = 'Guevara'.
 
 IF sy-subrc = 0.
-  DELETE lt_people INDEX sy-tabix.
+  WRITE: / ls_person-name.
+  WRITE: / ls_person-lastname.
+  WRITE: / ls_person-age.
+ELSE.
+  WRITE: / 'Persona no encontrada'.
 ENDIF.
