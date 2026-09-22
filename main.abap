@@ -32,6 +32,13 @@ ls_person-address = 'Calle 501'.
 APPEND ls_person TO lt_people.
 CLEAR ls_person.
 
+ls_person-name = 'Humberto'.
+ls_person-lastname = 'Fernandez'.
+ls_person-age = 50.
+ls_person-address = 'Calle 45'.
+APPEND ls_person TO lt_people.
+CLEAR ls_person.
+
 READ TABLE lt_people 
   INTO ls_person
   WITH KEY name = 'Maria'.
