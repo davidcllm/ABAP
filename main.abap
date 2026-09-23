@@ -41,12 +41,17 @@ CLEAR ls_person.
 
 READ TABLE lt_people 
   INTO ls_person
-  WITH KEY name = 'Maria'.
+  WITH KEY name = 'David'
+           lastname = 'Guevara'.
 
 IF sy-subrc = 0.
-  DELETE lt_people INDEX sy-tabix.
+  DELETE lt_people INDEX 4.
 ENDIF.
 
-LOOP AT lt_people INTO ls_person.
-  WRITE: / ls_person-name, ' ', ls_person-age.
-ENDLOOP.
+IF sy-subrc = 0.
+  WRITE: / ls_person-name.
+  WRITE: / ls_person-lastname.
+  WRITE: / ls_person-age.
+ELSE.
+  WRITE: / 'Persona no encontrada'.
+ENDIF.
