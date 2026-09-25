@@ -44,9 +44,10 @@ READ TABLE lt_people
   WITH KEY name = 'David'
            lastname = 'Guevara'.
 
-IF sy-subrc = 0.
-  DELETE lt_people INDEX 4.
-ENDIF.
+LOOP AT lt_people INTO ls_person.
+  ls_person-age = ls_person-age + 1.
+  MODIFY lt_people FROM ls_person.
+ENDLOOP.
 
 IF sy-subrc = 0.
   WRITE: / ls_person-name.
