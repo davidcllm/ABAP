@@ -39,20 +39,11 @@ ls_person-address = 'Calle 45'.
 APPEND ls_person TO lt_people.
 CLEAR ls_person.
 
-READ TABLE lt_people 
-  INTO ls_person
-  WITH KEY name = 'David'
-           lastname = 'Guevara'.
-
 LOOP AT lt_people INTO ls_person.
   ls_person-age = ls_person-age + 1.
-  MODIFY lt_people FROM ls_person.
+  MODIFY lt_people FROM ls_person INDEX sy-tabix.
 ENDLOOP.
 
-IF sy-subrc = 0.
-  WRITE: / ls_person-name.
-  WRITE: / ls_person-lastname.
-  WRITE: / ls_person-age.
-ELSE.
-  WRITE: / 'Persona no encontrada'.
-ENDIF.
+LOOP AT lt_people INTO ls_person.
+  WRITE: / ls_person-name, ' ', ls_person-age.
+ENDLOOP.
