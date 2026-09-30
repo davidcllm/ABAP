@@ -39,10 +39,14 @@ ls_person-address = 'Calle 45'.
 APPEND ls_person TO lt_people.
 CLEAR ls_person.
 
-LOOP AT lt_people INTO ls_person.
+READ TABLE lt_people 
+  INTO ls_person
+  WITH KEY name = 'David'.
+
+IF sy-subrc = 0.
   ls_person-age = ls_person-age + 1.
   MODIFY lt_people FROM ls_person INDEX sy-tabix.
-ENDLOOP.
+ENDIF.
 
 LOOP AT lt_people INTO ls_person.
   WRITE: / ls_person-name, ' ', ls_person-age.
