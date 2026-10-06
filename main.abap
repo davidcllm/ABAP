@@ -41,11 +41,10 @@ CLEAR ls_person.
 
 READ TABLE lt_people 
   INTO ls_person
-  WITH KEY name = 'David'.
+  WITH KEY name = 'Maria'.
 
 IF sy-subrc = 0.
-  ls_person-age = ls_person-age + 1.
-  MODIFY lt_people FROM ls_person INDEX sy-tabix.
+  DELETE lt_people INDEX sy-tabix.
 ENDIF.
 
 LOOP AT lt_people INTO ls_person.
