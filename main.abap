@@ -47,6 +47,6 @@ APPEND ls_person TO lt_people.
 CLEAR ls_person.
 
 LOOP AT lt_people INTO ls_person.
-  DELETE lt_people WHERE age < 18.
+  DELETE lt_people WHERE age < 12.
   WRITE: / ls_person-name, ' ', ls_person-age.
 ENDLOOP.
